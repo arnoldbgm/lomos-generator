@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --brand: #0e5f6e;
+  --brand-light: #15803d;
+  --accent: #0284c7;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --card-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.05), 0 2px 8px -1px rgba(0, 0, 0, 0.03);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand: var(--brand);
+  --color-brand-light: var(--brand-light);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), "Inter", "Segoe UI", sans-serif;
+  background-attachment: fixed;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(14, 95, 110, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(2, 132, 199, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(21, 128, 61, 0.05) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(14, 95, 110, 0.05) 0px, transparent 50%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.modern-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--card-shadow);
+}
+
+.sidebar-scroll {
+  height: calc(100vh - 120px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.preview-container {
+  height: calc(100vh - 40px);
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  background: #e2e8f0;
+  border-radius: 24px;
+  box-shadow: inset 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.step-number {
+  @apply flex h-8 w-8 items-center justify-center rounded-full bg-brand text-white font-bold text-sm;
+}
+
+.action-button-gradient {
+  background: linear-gradient(135deg, var(--brand) 0%, #15803d 100%);
+  border: none !important;
+  color: white !important;
+}
+
+.action-button-gradient:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 4px 12px rgba(14, 95, 110, 0.3);
+}
+
+.subtle-appear {
+  animation: subtle-appear 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes subtle-appear {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Ant Design Overrides */
+.ant-btn-primary {
+  box-shadow: 0 2px 8px rgba(14, 95, 110, 0.2);
+}
+
+.ant-input-lg, .ant-input-number-lg {
+  border-radius: 12px !important;
+}
+
+.ant-table-wrapper .ant-table {
+  background: transparent !important;
+}
+
+.ant-table-thead > tr > th {
+  background: rgba(241, 245, 249, 0.8) !important;
+  font-weight: 600 !important;
+  color: #64748b !important;
+}
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    background: #fff !important;
+  }
+
+  .print-hidden {
+    display: none !important;
+  }
+
+  .print-shell {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: none !important;
+    background: #fff !important;
+  }
+
+  .print-preview {
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  .print-page {
+    break-after: page;
+    page-break-after: always;
+    margin: 0 auto !important;
+  }
+
+  .print-page:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+}
