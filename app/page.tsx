@@ -162,7 +162,7 @@ export default function Home() {
     );
     setIsRowScaleModalOpen(false);
     setSelectedRowId(null);
-    messageApi.success("ConfiguraciÃ³n de fila aplicada.");
+    messageApi.success("Configuración de fila aplicada.");
   };
 
   const uploadProps: UploadProps = {
@@ -250,7 +250,7 @@ export default function Home() {
             </div>
             <div>
               <h1 className="text-2xl font-bold tracking-tight text-slate-900">Lomos Archv.</h1>
-              <p className="text-sm text-slate-500 font-medium">DiseÃ±o y exportaciÃ³n profesional</p>
+              <p className="text-sm text-slate-500 font-medium">Diseñ y exportación profesional</p>
             </div>
           </div>
 
@@ -288,7 +288,7 @@ export default function Home() {
             <section className="modern-glass rounded-3xl p-6 subtle-appear">
               <div className="flex items-center gap-3 mb-6">
                 <span className="step-number">1</span>
-                <h2 className="text-lg font-bold text-slate-800">PreparaciÃ³n de Datos</h2>
+                <h2 className="text-lg font-bold text-slate-800">Preparación de Datos</h2>
               </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
