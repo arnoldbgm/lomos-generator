@@ -85,6 +85,6 @@ export const LOMO_TEXT_LAYOUT: LomoTextLayout = {
     letterSpacing: "0.03em",
     maxWidth: "84%",
   },
-  rango: { top: "65%", left: "50%", fontSize: 13, fontWeight: 600, maxWidth: "84%" },
-  anio: { top: "77%", left: "50%", fontSize: 16, fontWeight: 700, maxWidth: "84%" },
+  rango: { top: "66%", left: "50%", fontSize: 12, fontWeight: 600, maxWidth: "84%" },
+  anio: { top: "79%", left: "50%", fontSize: 16, fontWeight: 700, maxWidth: "84%" },
 };

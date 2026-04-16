@@ -45,7 +45,7 @@ const getTextStyle = (
       Math.max(0.2, Math.min(3, rowFontScale ?? 1)),
     fontWeight: anchor.fontWeight ?? 700,
     letterSpacing: anchor.letterSpacing ?? "normal",
-    lineHeight: 1.05,
+    lineHeight: 1.15,
     textAlign: "center",
     color: "#0f4c5c",
     fontFamily: "'Inter', sans-serif",
@@ -79,7 +79,17 @@ const renderLomoText = (
             {row.tipo || " "}
           </p>
           <p style={getTextStyle(LOMO_TEXT_LAYOUT.rango, globalFontScale, fieldFontScales.rango * rowFieldScales.rango, row.fontScale)}>
-            {row.inicio || row.fin ? `${row.inicio} - ${row.fin}` : " "}
+            {row.inicio || row.fin ? (
+              <>
+                {row.inicio}
+                <br />
+                -
+                <br />
+                {row.fin}
+              </>
+            ) : (
+              " "
+            )}
           </p>
           <p style={getTextStyle(LOMO_TEXT_LAYOUT.anio, globalFontScale, fieldFontScales.anio * rowFieldScales.anio, row.fontScale)}>
             {row.anio || " "}
